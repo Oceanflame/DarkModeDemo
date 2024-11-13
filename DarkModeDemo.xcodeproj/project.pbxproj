@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F9A5D4232CE4996B001A0CBE /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A5D4222CE4996B001A0CBE /* FirstViewController.swift */; };
+		F9A5D4252CE4997E001A0CBE /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A5D4242CE4997E001A0CBE /* SecondViewController.swift */; };
+		F9A5D4272CE49B18001A0CBE /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A5D4262CE49B18001A0CBE /* ThemeManager.swift */; };
+		F9A5D42A2CE49B85001A0CBE /* UIColor+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A5D4292CE49B85001A0CBE /* UIColor+Helper.swift */; };
+		F9A5D42C2CE4A63A001A0CBE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A5D42B2CE4A63A001A0CBE /* BaseViewController.swift */; };
 		F9B77F262CE220DC00C63DA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B77F252CE220DC00C63DA6 /* AppDelegate.swift */; };
-		F9B77F2A2CE220DC00C63DA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B77F292CE220DC00C63DA6 /* ViewController.swift */; };
 		F9B77F2F2CE220DD00C63DA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9B77F2E2CE220DD00C63DA6 /* Assets.xcassets */; };
 		F9B77F322CE220DD00C63DA6 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F9B77F312CE220DD00C63DA6 /* Base */; };
 /* End PBXBuildFile section */
@@ -31,9 +35,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F9A5D4222CE4996B001A0CBE /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		F9A5D4242CE4997E001A0CBE /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		F9A5D4262CE49B18001A0CBE /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		F9A5D4292CE49B85001A0CBE /* UIColor+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Helper.swift"; sourceTree = "<group>"; };
+		F9A5D42B2CE4A63A001A0CBE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F9B77F222CE220DC00C63DA6 /* DarkModeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkModeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B77F252CE220DC00C63DA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F9B77F292CE220DC00C63DA6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F9B77F2E2CE220DD00C63DA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9B77F312CE220DD00C63DA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9B77F332CE220DD00C63DA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,7 +96,11 @@
 			isa = PBXGroup;
 			children = (
 				F9B77F252CE220DC00C63DA6 /* AppDelegate.swift */,
-				F9B77F292CE220DC00C63DA6 /* ViewController.swift */,
+				F9A5D4222CE4996B001A0CBE /* FirstViewController.swift */,
+				F9A5D4242CE4997E001A0CBE /* SecondViewController.swift */,
+				F9A5D42B2CE4A63A001A0CBE /* BaseViewController.swift */,
+				F9A5D4262CE49B18001A0CBE /* ThemeManager.swift */,
+				F9A5D4292CE49B85001A0CBE /* UIColor+Helper.swift */,
 				F9B77F2E2CE220DD00C63DA6 /* Assets.xcassets */,
 				F9B77F302CE220DD00C63DA6 /* LaunchScreen.storyboard */,
 				F9B77F332CE220DD00C63DA6 /* Info.plist */,
@@ -226,8 +238,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9B77F2A2CE220DC00C63DA6 /* ViewController.swift in Sources */,
+				F9A5D4252CE4997E001A0CBE /* SecondViewController.swift in Sources */,
+				F9A5D4232CE4996B001A0CBE /* FirstViewController.swift in Sources */,
 				F9B77F262CE220DC00C63DA6 /* AppDelegate.swift in Sources */,
+				F9A5D42A2CE49B85001A0CBE /* UIColor+Helper.swift in Sources */,
+				F9A5D4272CE49B18001A0CBE /* ThemeManager.swift in Sources */,
+				F9A5D42C2CE4A63A001A0CBE /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
