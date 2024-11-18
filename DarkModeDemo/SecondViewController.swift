@@ -11,6 +11,6 @@ import Foundation
 class SecondViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white_bg
+        setViewBackGroundColor(.white_bg)
     }
 }

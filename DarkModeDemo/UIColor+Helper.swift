@@ -13,6 +13,12 @@ enum ColorName: String {
     case white_bg = "white_bg"
 }
 
+enum P3 {
+    static func HEX(_ hex: Int, alpha: CGFloat = 1) -> UIColor {
+        return UIColor.color(withHex: hex, alpha: alpha, displayP3: true)
+    }
+}
+
 extension UIColor {
     class func color(withHex hex: Int, alpha: CGFloat, displayP3: Bool = false) -> UIColor {
         let r: Int = (hex >> 16) & 255
@@ -28,28 +34,11 @@ extension UIColor {
             return UIColor(red: CGFloat(rf), green: CGFloat(gf), blue: CGFloat(bf), alpha: alpha)
         }
     }
-    enum P3 {
-        static func HEX(_ hex: Int, alpha: CGFloat = 1) -> UIColor {
-            return UIColor.color(withHex: hex, alpha: alpha, displayP3: true)
-        }
-    }
     
-    static var black_mainFont: UIColor { themeColor(colorsTuple: (P3.HEX(0x141414),
-                                                                  P3.HEX(0xFFFFFF))) }
+    static var black_mainFont: UIColor { ThemeManager.shared.currentColor(.black_mainFont) }
     
-    static var white_bg: UIColor { themeColor(colorsTuple: (P3.HEX(0xFFFFFF),
-                                                            P3.HEX(0x000000))) }
+    static var white_bg: UIColor { ThemeManager.shared.currentColor(.white_bg) }
     
-    static func themeColor(colorsTuple: (light: UIColor, dark: UIColor), colorName: ColorName) -> UIColor {
-        var color = UIColor()
-        switch ThemeManager.shared.currentTheme {
-        case .light:
-            color = colorsTuple.light
-        case .dark:
-            color = colorsTuple.dark
-        }
-        color.
-    }
 }
 
 
@@ -68,3 +57,44 @@ extension UIView {
         return allSubviews
     }
 }
+
+class BaseUILabel: UILabel, ThemeAble {
+    var colorName: ColorName?
+    
+    func setTextColor(_ colorName: ColorName) {
+        self.colorName = colorName
+        textColor = ThemeManager.shared.currentColor(colorName)
+    }
+    
+    func applyTheme() {
+        if let colorName = colorName {
+            textColor = ThemeManager.shared.currentColor(colorName)
+        }
+    }
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        ThemeManager.shared.register(self)
+    }
+}
+
+class BaseUIButton: UIButton, ThemeAble {
+    var colorName: ColorName?
+    
+    func setTitleColor(_ colorName: ColorName, _ state: UIControl.State) {
+        self.colorName = colorName
+        setTitleColor(ThemeManager.shared.currentColor(colorName), for: state)
+    }
+    
+    func applyTheme() {
+        if let colorName = colorName {
+            setTitleColor(ThemeManager.shared.currentColor(colorName), for: .normal)
+        }
+    }
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        ThemeManager.shared.register(self)
+    }
+}
+

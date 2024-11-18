@@ -8,12 +8,26 @@
 import Foundation
 import UIKit
 
-class BaseViewController: UIViewController {
+class BaseViewController: UIViewController, ThemeAble {
+    var colorName: ColorName?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
-        ThemeManager.shared.register(self.view)
-        for subview in view.allSubviews() {
-            ThemeManager.shared.register(subview)
-            print("添加 view")
+        super.viewWillAppear(animated)
+        ThemeManager.shared.register(self)
+    }
+    
+    func setViewBackGroundColor(_ color: ColorName) {
+        self.colorName = color
+        view.backgroundColor = ThemeManager.shared.currentColor(color)
+    }
+    
+    func applyTheme() {
+        if let colorName = colorName {
+            view.backgroundColor = ThemeManager.shared.currentColor(colorName)
         }
     }
 }
