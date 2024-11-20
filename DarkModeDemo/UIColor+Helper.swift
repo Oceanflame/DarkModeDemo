@@ -59,6 +59,13 @@ extension UIView {
 }
 
 class BaseUILabel: UILabel, ThemeAble {
+    func applyTheme(completion: (() -> Void)?) {
+        if let colorName = colorName {
+            textColor = ThemeManager.shared.currentColor(colorName)
+            completion?()
+        }
+    }
+    
     var colorName: ColorName?
     
     func setTextColor(_ colorName: ColorName) {
@@ -66,19 +73,29 @@ class BaseUILabel: UILabel, ThemeAble {
         textColor = ThemeManager.shared.currentColor(colorName)
     }
     
-    func applyTheme() {
-        if let colorName = colorName {
-            textColor = ThemeManager.shared.currentColor(colorName)
-        }
-    }
-    
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
         ThemeManager.shared.register(self)
+        NotificationCenter.default.addObserver(self, selector: #selector(changeTheme), name: .changeThemeNotification, object: nil)
+    }
+    
+    @objc func changeTheme() {
+        if let colorName = colorName {
+            textColor = ThemeManager.shared.currentColor(colorName)
+        }
+        let time = Date().timeIntervalSince1970
+        ThemeManager.shared.endTime = time > ThemeManager.shared.endTime ? time : ThemeManager.shared.endTime
     }
 }
 
 class BaseUIButton: UIButton, ThemeAble {
+    func applyTheme(completion: (() -> Void)?) {
+        if let colorName = colorName {
+            setTitleColor(ThemeManager.shared.currentColor(colorName), for: .normal)
+            completion?()
+        }
+    }
+    
     var colorName: ColorName?
     
     func setTitleColor(_ colorName: ColorName, _ state: UIControl.State) {
@@ -86,15 +103,18 @@ class BaseUIButton: UIButton, ThemeAble {
         setTitleColor(ThemeManager.shared.currentColor(colorName), for: state)
     }
     
-    func applyTheme() {
-        if let colorName = colorName {
-            setTitleColor(ThemeManager.shared.currentColor(colorName), for: .normal)
-        }
-    }
-    
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
         ThemeManager.shared.register(self)
+        NotificationCenter.default.addObserver(self, selector: #selector(changeTheme), name: .changeThemeNotification, object: nil)
+    }
+    
+    @objc func changeTheme() {
+        if let colorName = colorName {
+            setTitleColor(ThemeManager.shared.currentColor(colorName), for: .normal)
+        }
+        let time = Date().timeIntervalSince1970
+        ThemeManager.shared.endTime = time > ThemeManager.shared.endTime ? time : ThemeManager.shared.endTime
     }
 }
 

@@ -31,8 +31,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let secondNavigationController = UINavigationController(rootViewController: secondViewController)
         secondNavigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 1)
         
+        let thirdViewController = ThirdViewController()
+        thirdViewController.title = "Third"
+        let thirdNavController = UINavigationController(rootViewController: thirdViewController)
+        thirdNavController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 2)
+        
         // 将 NavigationControllers 添加到 TabBarController
-        tabBarController.viewControllers = [firstNavigationController, secondNavigationController]
+        tabBarController.viewControllers = [firstNavigationController, secondNavigationController, thirdNavController]
         
         // 设置根视图控制器
         window?.rootViewController = tabBarController

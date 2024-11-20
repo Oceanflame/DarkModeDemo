@@ -15,6 +15,8 @@
 		F9B77F262CE220DC00C63DA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B77F252CE220DC00C63DA6 /* AppDelegate.swift */; };
 		F9B77F2F2CE220DD00C63DA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9B77F2E2CE220DD00C63DA6 /* Assets.xcassets */; };
 		F9B77F322CE220DD00C63DA6 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F9B77F312CE220DD00C63DA6 /* Base */; };
+		F9CF13CB2CEC3AA0002628F0 /* UIImage+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CF13CA2CEC3AA0002628F0 /* UIImage+Helper.swift */; };
+		F9CF13CD2CEC6D1F002628F0 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CF13CC2CEC6D1F002628F0 /* ThirdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		F9B77F332CE220DD00C63DA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9B77F382CE220DD00C63DA6 /* DarkModeDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DarkModeDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9B77F422CE220DE00C63DA6 /* DarkModeDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DarkModeDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9CF13CA2CEC3AA0002628F0 /* UIImage+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Helper.swift"; sourceTree = "<group>"; };
+		F9CF13CC2CEC6D1F002628F0 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,9 +102,11 @@
 				F9B77F252CE220DC00C63DA6 /* AppDelegate.swift */,
 				F9A5D4222CE4996B001A0CBE /* FirstViewController.swift */,
 				F9A5D4242CE4997E001A0CBE /* SecondViewController.swift */,
+				F9CF13CC2CEC6D1F002628F0 /* ThirdViewController.swift */,
 				F9A5D42B2CE4A63A001A0CBE /* BaseViewController.swift */,
 				F9A5D4262CE49B18001A0CBE /* ThemeManager.swift */,
 				F9A5D4292CE49B85001A0CBE /* UIColor+Helper.swift */,
+				F9CF13CA2CEC3AA0002628F0 /* UIImage+Helper.swift */,
 				F9B77F2E2CE220DD00C63DA6 /* Assets.xcassets */,
 				F9B77F302CE220DD00C63DA6 /* LaunchScreen.storyboard */,
 				F9B77F332CE220DD00C63DA6 /* Info.plist */,
@@ -242,7 +248,9 @@
 				F9A5D4232CE4996B001A0CBE /* FirstViewController.swift in Sources */,
 				F9B77F262CE220DC00C63DA6 /* AppDelegate.swift in Sources */,
 				F9A5D42A2CE49B85001A0CBE /* UIColor+Helper.swift in Sources */,
+				F9CF13CB2CEC3AA0002628F0 /* UIImage+Helper.swift in Sources */,
 				F9A5D4272CE49B18001A0CBE /* ThemeManager.swift in Sources */,
+				F9CF13CD2CEC6D1F002628F0 /* ThirdViewController.swift in Sources */,
 				F9A5D42C2CE4A63A001A0CBE /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
